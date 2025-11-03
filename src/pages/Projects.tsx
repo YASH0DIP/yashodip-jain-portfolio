@@ -32,8 +32,8 @@ function Projects() {
       description:
         "Personal developer portfolio built with React, Tailwind, and Framer Motion for smooth animations.",
       tech: ["React", "Tailwind", "Framer Motion"],
-      github: "#",
-      live: "#",
+      github: "https://github.com/YASH0DIP/yashodip-jain-portfolio",
+      live: "https://yashodip-jain-portfolio.vercel.app",
     },
   ];
 
