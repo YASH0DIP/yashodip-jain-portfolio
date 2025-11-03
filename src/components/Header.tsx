@@ -16,7 +16,7 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-[#0a192f] text-gray-200 shadow-md">
       {/* Desktop Navbar */}
-      <nav className="hidden md:flex items-center justify-between px-10 py-5">
+      <nav className="hidden md:flex items-center justify-between px-12 py-5">
         <div className="text-2xl font-bold tracking-wider text-[#64ffda] cursor-pointer" onClick={() => scrollToSection("home")}>YCJ</div>
         <ul className="flex gap-10 text-lg">
           <li onClick={() => scrollToSection("home")} className="hover:text-[#64ffda] cursor-pointer">Home</li>
