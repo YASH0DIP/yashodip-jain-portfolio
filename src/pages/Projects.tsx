@@ -38,9 +38,9 @@ function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-10 bg-[#0a192f] text-gray-200 px-4 sm:px-8 md:px-16 flex flex-col items-center">
+    <section id="projects" className="py-10 bg-[#0a192f] text-gray-200 px-4 sm:px-8 md:px-16 flex flex-col items-center space-y-8">
       <div className="max-w-6xl w-full">
-        <h3 className="text-3xl sm:text-4xl font-bold mb-12 text-[#64ffda]">
+        <h3 className="text-3xl sm:text-4xl font-bold mb-12 pt-10 md:pt-20 text-[#64ffda]">
           Projects
         </h3>
 
@@ -48,7 +48,7 @@ function Projects() {
           {projectData.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 60 }}
+              initial={{ opacity: 0, y: -40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
@@ -79,6 +79,13 @@ function Projects() {
           ))}
         </div>
       </div>
+      <a
+          href="https://github.com/YASH0DIP?tab=repositories"
+          download
+          className="px-6 py-3 border border-[#64ffda] text-[#64ffda] rounded-md text-base sm:text-lg font-medium transition-all duration-300 hover:bg-[#64ffda]/10 hover:shadow-[0_0_15px_rgba(100,255,218,0.4)]"
+        >
+          View all
+        </a>
     </section>
   );
 }

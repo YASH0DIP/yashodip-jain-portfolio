@@ -22,7 +22,7 @@ function About() {
   ];
 
   return (
-    <section id="about" className="py-5 sm:py-24 bg-[#0a192f] text-gray-200 flex justify-center px-4 sm:px-8 md:px-16">
+    <section id="about" className="py-5 bg-[#0a192f] text-gray-200 flex justify-center px-4 sm:px-8 md:px-16">
       <div className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Text */}
         <motion.div
@@ -31,7 +31,7 @@ function About() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl sm:text-4xl font-bold mb-6 text-[#64ffda]">
+          <h3 className="text-3xl sm:text-4xl font-bold mb-6 mt-12 md:mt-20 text-[#64ffda]">
             About Me
           </h3>
 

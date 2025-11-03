@@ -8,7 +8,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col justify-center items-center text-center gap-10 py-16 sm:py-20 md:py-24 px-4"
+      className="min-h-screen flex flex-col justify-center items-center text-center gap-8 pt-12 px-2"
     >
       {/* Heading */}
       <div>

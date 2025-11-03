@@ -54,11 +54,11 @@ export default function ContactModal({ isOpen, onClose }: Props) {
         <>
           {/* Overlay */}
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-60 z-40"
+            className="fixed inset-0 bg-gray-950 bg-opacity-60 z-40"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={{ opacity: 0.75 }}
             exit={{ opacity: 0 }}
-            onClick={onClose}
+            onClick={()=> onClose()}
           />
 
           {/* Modal */}
