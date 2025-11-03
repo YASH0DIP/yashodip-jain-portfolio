@@ -28,7 +28,7 @@ function Hero() {
       </div>
 
       {/* Buttons */}
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mt-8 w-full max-w-md">
+      <div className="grid grid-cols-1 sm:grid-cols-2 justify-center items-center gap-4 sm:gap-6 mt-2 w-full max-w-md">
         <a
           href="/Yashodip Jain's Resume.pdf"
           download

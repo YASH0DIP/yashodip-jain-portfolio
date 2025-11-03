@@ -3,7 +3,7 @@ import { GithubOutlined, LinkedinFilled, MailOutlined, FacebookFilled, Instagram
 import { SiGeeksforgeeks, SiVercel } from "react-icons/si";
 import type { ReactElement } from "react";
 
-interface SocialIcons {
+export interface SocialIcons {
   icon: ReactElement;
   label: string;
   link: string;
@@ -22,7 +22,7 @@ function About() {
   ];
 
   return (
-    <section id="about" className="py-20 sm:py-24 bg-[#0a192f] text-gray-200 flex justify-center px-4 sm:px-8 md:px-16">
+    <section id="about" className="py-5 sm:py-24 bg-[#0a192f] text-gray-200 flex justify-center px-4 sm:px-8 md:px-16">
       <div className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Text */}
         <motion.div

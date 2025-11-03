@@ -45,7 +45,7 @@ export default function Carousel() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto py-10 space-y-8">
+    <div className="w-full max-w-5xl mx-auto py-5 space-y-3">
       <Slider {...settings}>
         {skills.map((skill, i) => (
           <motion.div

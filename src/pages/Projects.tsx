@@ -38,9 +38,9 @@ function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-[#0a192f] text-gray-200 px-4 sm:px-8 md:px-16 flex flex-col items-center">
+    <section id="projects" className="py-10 bg-[#0a192f] text-gray-200 px-4 sm:px-8 md:px-16 flex flex-col items-center">
       <div className="max-w-6xl w-full">
-        <h3 className="text-3xl sm:text-4xl font-bold mb-12 text-[#64ffda] text-center md:text-left">
+        <h3 className="text-3xl sm:text-4xl font-bold mb-12 text-[#64ffda]">
           Projects
         </h3>
 
