@@ -17,7 +17,7 @@ function About() {
     { icon: <InstagramOutlined />, label: "y.a.s.h.o.d.i.p", link: "https://www.instagram.com/y.a.s.h.o.d.i.p/" },
     { icon: <FacebookFilled />, label: "yashodip.jain.75", link: "https://www.facebook.com/yashodip.jain.75/" },
     { icon: <SiGeeksforgeeks />, label: "jainyashvs3x", link: "https://www.geeksforgeeks.org/user/jainyashvs3x/" },
-    // { icon: <BsTwitterX />, label: "", link: "" },
+    // { icon: <BsTwitterX />, label: "#", link: "#" },
     { icon: <SiVercel />, label: "yash0dips-projects", link: "https://vercel.com/yash0dips-projects" },
   ];
 
@@ -31,7 +31,7 @@ function About() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl sm:text-4xl font-bold mb-6 mt-12 md:mt-20 text-[#64ffda]">
+          <h3 className="text-3xl sm:text-4xl font-bold mb-6 mt-14 md:mt-20 text-[#64ffda]">
             About Me
           </h3>
 

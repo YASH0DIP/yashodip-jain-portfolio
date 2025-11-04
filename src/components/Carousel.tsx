@@ -56,7 +56,7 @@ export default function Carousel() {
             whileHover={{ rotateY: 15, scale: 1 }}
             className="flex flex-col items-center justify-center p-4"
           >
-            <div className="flex justify-center items-center rounded-full py-6 px-3 transition-all duration-500 transform hover:-translate-y-2">
+            <div className="flex justify-center items-center rounded-full py-3 px-3 transition-all duration-500 transform hover:-translate-y-2">
               <div className="text-5xl">{skill.icon}</div>
             </div>
             <p className="text-gray-300 text-sm mt-3 hidden sm:block">{skill.name}</p>

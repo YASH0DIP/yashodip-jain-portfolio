@@ -15,7 +15,7 @@ function Projects() {
       title: "Online Bookstore",
       description:
         "A full-stack eCommerce platform using React, Django REST, PostgreSQL, and Stripe for secure payments.",
-      tech: ["React", "Django REST", "PostgreSQL", "Stripe", "Tailwind"],
+      tech: ["React", "Django REST", "PostgreSQL", "Stripe", "Tailwind", "TypeScript"],
       github: "https://github.com/YASH0DIP/Online-Bookstore-Using-Python-DRF",
       live: "https://github.com/YASH0DIP/Online-Bookstore-Using-Python-DRF",
     },
@@ -31,9 +31,17 @@ function Projects() {
       title: "Portfolio Website",
       description:
         "Personal developer portfolio built with React, Tailwind, and Framer Motion for smooth animations.",
-      tech: ["React", "Tailwind", "Framer Motion"],
+      tech: ["React", "Tailwind", "Framer Motion","TypeScript"],
       github: "https://github.com/YASH0DIP/yashodip-jain-portfolio",
       live: "https://yashodip-jain-portfolio.vercel.app",
+    },
+    {
+      title: "Oraganization Hierarchy UI",
+      description:
+        "An attractive and functional user interface for oraganization to represent their hierarchy as per the employee position.",
+      tech: ["React", "Tailwind", "Material UI", "TypeScript"],
+      github: "https://github.com/YASH0DIP/hierarchy-ui-react-app",
+      live: "https://hierarchy-ui-react-app.vercel.app/",
     },
   ];
 
