@@ -36,7 +36,7 @@ function Projects() {
       live: "https://yashodip-jain-portfolio.vercel.app",
     },
     {
-      title: "Oraganization Hierarchy UI",
+      title: "Oraganization Hierarchy",
       description:
         "An attractive and functional user interface for oraganization to represent their hierarchy as per the employee position.",
       tech: ["React", "Tailwind", "Material UI", "TypeScript"],
@@ -56,9 +56,9 @@ function Projects() {
           {projectData.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: -40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              initial={{ opacity: 0, scale: 0.25 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.75, delay: index * 0.5 }}
               viewport={{ once: true }}
               className="bg-[#112240] p-6 rounded-xl shadow-lg hover:shadow-[#64ffda]/30 hover:scale-[1.03] transition-all duration-300 flex flex-col justify-between"
             >
