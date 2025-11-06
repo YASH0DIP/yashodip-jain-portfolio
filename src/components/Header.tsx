@@ -60,7 +60,7 @@ function Header() {
       </nav>
 
       {/* Mobile Navbar */}
-      <nav className={`flex md:hidden items-center justify-between gap-3 pl-6 pr-6 py-4 bg-[#0a192f] text-gray-200`}>
+      <nav className={`flex md:hidden items-center justify-between pl-6 pr-6 py-4 bg-[#0a192f] text-gray-200`}>
         <div
           onClick={() => scrollToSection("home")}
           className="text-xl font-bold text-[#64ffda] cursor-pointer"

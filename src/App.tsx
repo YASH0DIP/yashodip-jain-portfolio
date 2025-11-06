@@ -7,7 +7,7 @@ import Projects from "./pages/Projects";
 
 function App() {
   return (
-    <div className="font-inter text-gray-400 flex flex-col min-h-screen bg-[#0a192f] scroll-smooth">
+    <div className="font-inter text-gray-400 flex flex-col w-screen min-h-screen bg-[#0a192f] scroll-smooth">
       <Header />
       <main className="px-4 sm:px-8 md:px-16 lg:px-24 pt-10 grow">
         <Hero />
