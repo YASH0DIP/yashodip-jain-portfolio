@@ -1,52 +1,102 @@
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Header() {
+  const navigationLinks: string[] = ["home", "about", "projects"];
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const handleSidebar = () => setIsOpen(!isOpen);
 
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+    if (section) section.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 30);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-[#0a192f] text-gray-200 shadow-md">
+    <header
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? "bg-[#0a192f]/95 shadow-md backdrop-blur-md" : "bg-[#0a192f]"
+      }`}
+    >
       {/* Desktop Navbar */}
-      <nav className="hidden md:flex items-center justify-between px-12 py-5">
-        <div className="text-2xl font-bold tracking-wider text-[#64ffda] cursor-pointer" onClick={() => scrollToSection("home")}>YCJ</div>
-        <ul className="flex gap-10 text-lg">
-          <li onClick={() => scrollToSection("home")} className="hover:text-[#64ffda] cursor-pointer">Home</li>
-          <li onClick={() => scrollToSection("about")} className="hover:text-[#64ffda] cursor-pointer">About</li>
-          <li onClick={() => scrollToSection("projects")} className="hover:text-[#64ffda] cursor-pointer">Projects</li>
+      <nav className="hidden md:flex items-center justify-between py-5 px-10 lg:px-20 text-gray-200">
+        {/* Logo */}
+        <div
+          onClick={() => scrollToSection("home")}
+          className="text-2xl font-bold tracking-wider text-[#64ffda] cursor-pointer hover:scale-105 transition-transform"
+        >
+          YCJ
+        </div>
+
+        {/* Menu Items */}
+        <ul className="flex gap-10 lg:gap-14 text-base lg:text-lg font-medium">
+          {navigationLinks.map((item) => (
+            <li
+              key={item}
+              onClick={() => scrollToSection(item)}
+              className="relative cursor-pointer text-gray-300 hover:text-[#64ffda] transition-colors duration-300 group"
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#64ffda] transition-all duration-300 group-hover:w-full" />
+            </li>
+          ))}
         </ul>
       </nav>
 
       {/* Mobile Navbar */}
-      <nav className="flex md:hidden items-center justify-between px-6 py-4">
-        <div className="text-xl font-bold text-[#64ffda] cursor-pointer" onClick={() => scrollToSection("home")}>YCJ</div>
-        <button onClick={handleSidebar} className="text-2xl focus:outline-none">
+      <nav
+        className={`flex md:hidden items-center justify-between px-6 py-4 text-gray-200 ${
+          isScrolled ? "bg-[#0a192f]/95 backdrop-blur-md" : "bg-[#0a192f]"
+        }`}
+      >
+        <div
+          onClick={() => scrollToSection("home")}
+          className="text-xl font-bold text-[#64ffda] cursor-pointer"
+        >
+          YCJ
+        </div>
+        <button
+          onClick={handleSidebar}
+          className="text-2xl focus:outline-none hover:text-[#64ffda] transition-colors"
+        >
           {isOpen ? <CloseOutlined /> : <MenuOutlined />}
         </button>
       </nav>
 
       {/* Mobile Sidebar */}
-      <div className={`fixed top-0 right-0 h-full w-2/3 bg-[#112240] text-gray-200 transform ${isOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-300 ease-in-out md:hidden z-40`}>
-        <div className="flex flex-col items-center justify-center h-full gap-8 text-2xl">
-          <button onClick={() => scrollToSection("home")} className="hover:text-[#64ffda]">Home</button>
-          <button onClick={() => scrollToSection("about")} className="hover:text-[#64ffda]">About</button>
-          <button onClick={() => scrollToSection("projects")} className="hover:text-[#64ffda]">Projects</button>
+      <div
+        className={`fixed top-0 right-0 h-full w-2/3 sm:w-1/2 bg-[#112240] text-gray-200 transform ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        } transition-transform duration-300 ease-in-out md:hidden z-40 shadow-lg`}
+      >
+        <div className="flex flex-col items-center justify-center h-full gap-8 text-xl font-medium">
+          {navigationLinks.map((item) => (
+            <button
+              key={item}
+              onClick={() => scrollToSection(item)}
+              className="hover:text-[#64ffda] transition-colors duration-300"
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </button>
+          ))}
         </div>
       </div>
 
-      {/* Overlay when sidebar is open */}
+      {/* Overlay */}
       {isOpen && (
         <div
           onClick={handleSidebar}
-          className="fixed inset-0 bg-gray-900 bg-opacity-50 md:hidden z-30 transition-opacity duration-300"
+          className="fixed inset-0 bg-black bg-opacity-50 md:hidden z-30 transition-opacity duration-300"
         />
       )}
     </header>
@@ -54,4 +104,3 @@ function Header() {
 }
 
 export default Header;
-
