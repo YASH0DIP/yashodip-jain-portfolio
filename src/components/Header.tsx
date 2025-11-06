@@ -2,7 +2,9 @@ import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { useState, useEffect } from "react";
 
 function Header() {
+
   const navigationLinks: string[] = ["home", "about", "projects"];
+
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -14,8 +16,10 @@ function Header() {
     setIsOpen(false);
   };
 
+  // Change header background on scroll
   useEffect(() => {
     const handleScroll = () => {
+    console.log(window.scrollY)
       setIsScrolled(window.scrollY > 30);
     };
     window.addEventListener("scroll", handleScroll);
@@ -25,7 +29,9 @@ function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-[#0a192f]/95 shadow-md backdrop-blur-md" : "bg-[#0a192f]"
+        isScrolled
+          ? "bg-[#0a192f]"
+          : "bg-transparent"
       }`}
     >
       {/* Desktop Navbar */}
@@ -54,11 +60,7 @@ function Header() {
       </nav>
 
       {/* Mobile Navbar */}
-      <nav
-        className={`flex md:hidden items-center justify-between px-6 py-4 text-gray-200 ${
-          isScrolled ? "bg-[#0a192f]/95 backdrop-blur-md" : "bg-[#0a192f]"
-        }`}
-      >
+      <nav className={`flex md:hidden items-center justify-between gap-3 pl-6 pr-6 py-4 bg-[#0a192f] text-gray-200`}>
         <div
           onClick={() => scrollToSection("home")}
           className="text-xl font-bold text-[#64ffda] cursor-pointer"
