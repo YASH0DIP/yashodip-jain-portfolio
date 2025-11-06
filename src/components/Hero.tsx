@@ -8,7 +8,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="flex flex-col justify-center items-center text-center gap-8 pt-22 px-2"
+      className="flex flex-col justify-center items-center text-center gap-8 pt-20 px-2"
     >
       {/* Heading */}
       <div>

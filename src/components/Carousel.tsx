@@ -40,7 +40,7 @@ export default function Carousel() {
       { breakpoint: 1024, settings: { slidesToShow: 4 } },
       { breakpoint: 768, settings: { slidesToShow: 3 } },
       { breakpoint: 480, settings: { slidesToShow: 2 } },
-      { breakpoint: 330, settings: { slidesToShow: 1 } },
+      // { breakpoint: 330, settings: { slidesToShow: 2 } },
     ],
   };
 
@@ -54,10 +54,10 @@ export default function Carousel() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             whileHover={{ rotateY: 15, scale: 1 }}
-            className="flex flex-col items-center justify-center p-4"
+            className="flex flex-col items-center justify-center p-2 md:p-4"
           >
             <div className="flex justify-center items-center rounded-full py-3 px-3 transition-all duration-500 transform hover:-translate-y-2">
-              <div className="text-5xl">{skill.icon}</div>
+              <div className="text-4xl md:text-5xl">{skill.icon}</div>
             </div>
             <p className="text-gray-300 text-sm mt-3 hidden sm:block">{skill.name}</p>
           </motion.div>
