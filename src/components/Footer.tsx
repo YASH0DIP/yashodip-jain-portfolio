@@ -5,10 +5,10 @@ import {
   InstagramOutlined,
 } from "@ant-design/icons";
 import { SiGeeksforgeeks, SiVercel } from "react-icons/si";
-import type { SocialIcons } from "../pages/About";
+import type { SocialIcon } from "../pages/About";
 
-function Footer() {
-  const footerSocials: SocialIcons[] = [
+function Footer(): React.ReactElement {
+  const footerSocials: SocialIcon[] = [
     {
       icon: <LinkedinFilled />,
       label: "LinkedIn",
@@ -45,7 +45,7 @@ function Footer() {
     <footer className="w-full bg-[#0a192f] text-gray-400 py-8 border-t border-[#233554] flex flex-col items-center gap-4 text-center">
       {/* Social Links */}
       <div className="flex flex-wrap justify-center items-center gap-6 text-2xl">
-        {footerSocials.map((social, index) => (
+        {footerSocials.map((social: SocialIcon, index: number) => (
           <a
             key={index}
             href={social.link}

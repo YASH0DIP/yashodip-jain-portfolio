@@ -3,14 +3,14 @@ import { GithubOutlined, LinkedinFilled, MailOutlined, FacebookFilled, Instagram
 import { SiGeeksforgeeks, SiVercel } from "react-icons/si";
 import type { ReactElement } from "react";
 
-export interface SocialIcons {
+export interface SocialIcon {
   icon: ReactElement;
   label: string;
   link: string;
 }
 
 function About() {
-  const socials: SocialIcons[] = [
+  const socials: SocialIcon[] = [
     { icon: <LinkedinFilled />, label: "yashodipjainofficial", link: "https://www.linkedin.com/in/yashodipjainofficial/" },
     { icon: <GithubOutlined />, label: "YASH0DIP", link: "https://github.com/YASH0DIP" },
     { icon: <MailOutlined />, label: "jainyashodip777@gmail.com", link: "mailto:jainyashodip777@gmail.com" },
@@ -68,7 +68,7 @@ function About() {
           viewport={{ once: true }}
           className="grid grid-cols-3 sm:grid-cols-4 gap-x-6 gap-y-8 text-4xl justify-items-center"
         >
-          {socials.map((item, idx) => (
+          {socials.map((item: SocialIcon, idx: number) => (
             <motion.div
               key={idx}
               whileHover={{ scale: 1.2, color: "#64ffda" }}

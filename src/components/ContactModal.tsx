@@ -1,21 +1,21 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 import { CloseOutlined } from "@ant-design/icons";
 
-interface Props {
+interface ContactModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export default function ContactModal({ isOpen, onClose }: Props) {
+function ContactModal({ isOpen, onClose }: ContactModalProps): React.ReactElement {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [status, setStatus] = useState<"" | "sending">("");
 
-  const SERVICE_ID = "service_feoncjl";
-  const TEMPLATE_ID = "template_w1hd0l7";
-  const PUBLIC_KEY = "cgJ22qoO8Wb0fJC33";
+  const SERVICE_ID: string = "service_feoncjl";
+  const TEMPLATE_ID: string = "template_w1hd0l7";
+  const PUBLIC_KEY: string = "cgJ22qoO8Wb0fJC33";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -58,7 +58,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.75 }}
             exit={{ opacity: 0 }}
-            onClick={()=> onClose()}
+            onClick={() => onClose()}
           />
 
           {/* Modal */}
@@ -117,22 +117,20 @@ export default function ContactModal({ isOpen, onClose }: Props) {
                   <button
                     type="reset"
                     disabled={status === "sending"}
-                    className={`flex-1 mt-2 py-2 rounded-md font-medium transition ${
-                      status === "sending"
+                    className={`flex-1 mt-2 py-2 rounded-md font-medium transition ${status === "sending"
                         ? "bg-gray-500 text-gray-800 cursor-not-allowed"
                         : "bg-[#64ffda] text-[#0a192f] hover:bg-[#64ffda]/90"
-                    }`}
+                      }`}
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className={`flex-1 mt-2 py-2 rounded-md font-medium transition ${
-                      status === "sending"
+                    className={`flex-1 mt-2 py-2 rounded-md font-medium transition ${status === "sending"
                         ? "bg-gray-500 text-gray-800 cursor-not-allowed"
                         : "bg-[#64ffda] text-[#0a192f] hover:bg-[#64ffda]/90"
-                    }`}
+                      }`}
                   >
                     {status === "sending" ? "Sending..." : "Send Message"}
                   </button>
@@ -145,3 +143,5 @@ export default function ContactModal({ isOpen, onClose }: Props) {
     </AnimatePresence>
   );
 }
+
+export default React.memo(ContactModal);

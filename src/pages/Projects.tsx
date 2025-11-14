@@ -1,5 +1,6 @@
 import { GithubOutlined, LinkOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
+import React from "react";
 
 interface Projects {
   title: string;
@@ -9,7 +10,7 @@ interface Projects {
   live: string;
 }
 
-function Projects() {
+function Projects(): React.ReactElement {
   const projectData: Projects[] = [
     {
       title: "Online Bookstore",
@@ -31,7 +32,7 @@ function Projects() {
       title: "Portfolio Website",
       description:
         "Personal developer portfolio built with React, Tailwind, and Framer Motion for smooth animations.",
-      tech: ["React", "Tailwind", "Framer Motion","TypeScript"],
+      tech: ["React", "Tailwind", "Framer Motion", "TypeScript"],
       github: "https://github.com/YASH0DIP/yashodip-jain-portfolio",
       live: "https://yashodip-jain-portfolio.vercel.app",
     },
@@ -46,14 +47,14 @@ function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-10 bg-[#0a192f] text-gray-200 px-4 sm:px-8 md:px-16 flex flex-col items-center space-y-8">
+    <section id="projects" className="bg-[#0a192f] pt-10 pb-5 text-gray-200 px-4 sm:px-8 md:px-16 flex flex-col items-center space-y-8">
       <div className="max-w-6xl w-full">
-        <h3 className="text-3xl sm:text-4xl font-bold mb-12 pt-10 md:pt-20 text-[#64ffda]">
+        <h3 className="text-3xl sm:text-4xl font-bold mb-12 pt-10 text-[#64ffda]">
           Projects
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projectData.map((project, index) => (
+          {projectData.map((project: Projects, index: number) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.25 }}
@@ -88,14 +89,14 @@ function Projects() {
         </div>
       </div>
       <a
-          href="https://github.com/YASH0DIP?tab=repositories"
-          download
-          className="px-6 py-3 border border-[#64ffda] text-[#64ffda] rounded-md text-base sm:text-lg font-medium transition-all duration-300 hover:bg-[#64ffda]/10 hover:shadow-[0_0_15px_rgba(100,255,218,0.4)]"
-        >
-          View all
-        </a>
+        href="https://github.com/YASH0DIP?tab=repositories"
+        download
+        className="px-6 py-3 border border-[#64ffda] text-[#64ffda] rounded-md text-base sm:text-lg font-medium transition-all duration-300 hover:bg-[#64ffda]/10 hover:shadow-[0_0_15px_rgba(100,255,218,0.4)]"
+      >
+        View all
+      </a>
     </section>
   );
 }
 
-export default Projects;
+export default React.memo(Projects);

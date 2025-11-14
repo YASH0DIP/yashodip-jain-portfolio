@@ -1,10 +1,10 @@
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { useState, useEffect } from "react";
 
-function Header() {
-  const navigationLinks: string[] = ["home", "about", "projects"];
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+function Header(): React.ReactElement {
+  const navigationLinks: string[] = ["home", "about", "education", "projects",];
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   const handleSidebar = () => setIsOpen(!isOpen);
 
@@ -40,7 +40,7 @@ function Header() {
 
         {/* Menu Items */}
         <ul className="flex gap-10 lg:gap-14 text-base lg:text-lg font-medium">
-          {navigationLinks.map((item) => (
+          {navigationLinks.map((item: string) => (
             <li
               key={item}
               onClick={() => scrollToSection(item)}
@@ -80,7 +80,7 @@ function Header() {
         } transition-transform duration-300 ease-in-out md:hidden z-40 shadow-lg`}
       >
         <div className="flex flex-col items-center justify-center h-full gap-8 text-xl font-medium">
-          {navigationLinks.map((item) => (
+          {navigationLinks.map((item: string) => (
             <button
               key={item}
               onClick={() => scrollToSection(item)}

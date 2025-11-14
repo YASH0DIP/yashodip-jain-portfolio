@@ -9,23 +9,29 @@ import {
   FaDatabase,
 } from "react-icons/fa";
 import { SiDjango, SiTailwindcss, SiPostgresql, SiJavascript, SiTypescript, SiNextdotjs, SiMysql } from "react-icons/si";
+import React from "react";
 
-export default function Carousel() {
-  const skills = [
-  { icon: <FaReact className="text-[#61DBFB]" />, name: "React" }, // React blue
-  { icon: <SiNextdotjs className="text-white" />, name: "Next.js" }, // Next.js white/black
-  { icon: <SiTailwindcss className="text-[#38BDF8]" />, name: "Tailwind CSS" }, // Tailwind cyan
-  { icon: <SiJavascript className="text-[#F7DF1E]" />, name: "JavaScript" }, // JS yellow
-  { icon: <SiTypescript className="text-[#3178C6]" />, name: "TypeScript" }, // TS blue
-  { icon: <FaNodeJs className="text-[#3C873A]" />, name: "Node.js" }, // Node green
-  { icon: <SiDjango className="text-[#9da9a5]" />, name: "Django" }, // Django dark green
-  { icon: <SiPostgresql className="text-[#336791]" />, name: "PostgreSQL" }, // PostgreSQL blue
-  { icon: <SiMysql className="text-[#4479A1]" />, name: "MySQL" }, // MySQL blue
-  { icon: <FaJava className="text-[#E76F00]" />, name: "Java" }, // Java orange
-  { icon: <FaPython className="text-[#3776AB]" />, name: "Python" }, // Python blue
-  { icon: <FaGitAlt className="text-[#F05032]" />, name: "Git" }, // Git orange
-  { icon: <FaDatabase className="text-[#9CA3AF]" />, name: "SQL" }, // Neutral gray
-];
+interface SkillsIcon {
+  icon: React.ReactElement;
+  name: string;
+}
+
+function Carousel(): React.ReactElement {
+  const skills: SkillsIcon[] = [
+    { icon: <FaReact className="text-[#61DBFB]" />, name: "React" }, // React blue
+    { icon: <SiNextdotjs className="text-white" />, name: "Next.js" }, // Next.js white/black
+    { icon: <SiTailwindcss className="text-[#38BDF8]" />, name: "Tailwind CSS" }, // Tailwind cyan
+    { icon: <SiJavascript className="text-[#F7DF1E]" />, name: "JavaScript" }, // JS yellow
+    { icon: <SiTypescript className="text-[#3178C6]" />, name: "TypeScript" }, // TS blue
+    { icon: <FaNodeJs className="text-[#3C873A]" />, name: "Node.js" }, // Node green
+    { icon: <SiDjango className="text-[#9da9a5]" />, name: "Django" }, // Django dark green
+    { icon: <SiPostgresql className="text-[#336791]" />, name: "PostgreSQL" }, // PostgreSQL blue
+    { icon: <SiMysql className="text-[#4479A1]" />, name: "MySQL" }, // MySQL blue
+    { icon: <FaJava className="text-[#E76F00]" />, name: "Java" }, // Java orange
+    { icon: <FaPython className="text-[#3776AB]" />, name: "Python" }, // Python blue
+    { icon: <FaGitAlt className="text-[#F05032]" />, name: "Git" }, // Git orange
+    { icon: <FaDatabase className="text-[#9CA3AF]" />, name: "SQL" }, // Neutral gray
+  ];
 
   const settings = {
     infinite: true,
@@ -47,7 +53,7 @@ export default function Carousel() {
   return (
     <div className="w-full max-w-5xl mx-auto py-5 space-y-3">
       <Slider {...settings}>
-        {skills.map((skill, i) => (
+        {skills.map((skill: SkillsIcon, i: number) => (
           <motion.div
             key={i}
             initial={{ scale: 0.8, opacity: 0 }}
@@ -66,3 +72,5 @@ export default function Carousel() {
     </div>
   );
 }
+
+export default React.memo(Carousel)

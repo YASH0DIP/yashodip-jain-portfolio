@@ -1,9 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Carousel from "../components/Carousel";
 import ContactModal from "./ContactModal";
 
-function Hero() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+function Hero(): React.ReactElement {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   return (
     <section
@@ -51,4 +51,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default React.memo(Hero);
