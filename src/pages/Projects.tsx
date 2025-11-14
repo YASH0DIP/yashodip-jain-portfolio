@@ -57,8 +57,8 @@ function Projects(): React.ReactElement {
           {projectData.map((project: Projects, index: number) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.25 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0.5, scale: 0.5 }}
+              whileInView={{ opacity: 0.75, scale: 1 }}
               transition={{ duration: 0.25, delay: index * 0.5 }}
               viewport={{ once: true }}
               className="bg-[#112240] p-6 rounded-xl shadow-lg hover:shadow-[#64ffda]/30 hover:scale-[1.03] transition-all duration-300 flex flex-col justify-between"
